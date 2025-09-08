@@ -63,6 +63,18 @@ public class ProductsController(IProductRepository repo) : ControllerBase
         return BadRequest("Something went wrong");
     }
 
+    [HttpGet("brands")]
+    public async Task<ActionResult<IReadOnlyList<string>>> GetBrarnds()
+    {
+        return Ok(await repo.GetBrandsAsync());
+    }
+
+    [HttpGet("types")]
+    public async Task<ActionResult<IReadOnlyList<string>>> GeTypes()
+    {
+        return Ok(await repo.GetTypesAsync());
+    }
+
     private bool ProductExist(int id)
     {
         return repo.ProductExist(id);
