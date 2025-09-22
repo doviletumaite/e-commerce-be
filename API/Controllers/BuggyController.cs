@@ -1,4 +1,4 @@
-using Core.Entities;
+using API.DTOs;
 using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers;
 
@@ -29,7 +29,7 @@ public class BuggyController : BaseApiController
     }
 
     [HttpPost("validationerror")]
-    public IActionResult GetValidationError(Product product)
+    public IActionResult GetValidationError(CreateProductDto product)
     {
         return Ok();
     }
